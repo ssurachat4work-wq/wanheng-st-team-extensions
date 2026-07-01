@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Chrome Extensions Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --orange-primary: #ff6600;
+            --orange-hover: #e65c00;
+            --orange-light: #fff5ed;
+            --border-color: #eaeaea;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--orange-light);
+            color: var(--orange-primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 102, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .extension-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 680px) {
+            .extension-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        /* ส่วนหัวของการ์ดที่เป็นพื้นที่ใส่รูป/กราฟิกตามเรฟ */
+        .card-banner {
+            height: 160px;
+            background: linear-gradient(135deg, #ff8033 0%, var(--orange-primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+        }
+
+        /* ตัวย่อชื่อโปรเจกต์กลางแบนเนอร์ */
+        .card-banner-logo {
+            font-size: 3rem;
+            font-weight: 700;
+            opacity: 0.9;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .card-info h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .card-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            min-height: 45px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--orange-primary);
+            color: white;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            width: 100%;
+            border: none;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+        }
+
+        .btn svg {
+            margin-left: 8px;
+            width: 18px;
+            height: 18px;
+            transition: var(--transition);
+        }
+
+        /* Hover Effects */
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 102, 0, 0.3);
+            box-shadow: 0 20px 35px rgba(255, 102, 0, 0.08);
+        }
+
+        .btn:hover {
+            background-color: var(--orange-hover);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="badge">🔥 2 Extensions Available</span>
+            <h1>Team Extensions Hub</h1>
+            <p>ศูนย์รวมเครื่องมือ Chrome Extension เพื่อเพิ่มความสะดวกและรวดเร็วในการทำงานสำหรับทีมพัฒนา</p>
+        </header>
+
+        <main class="extension-grid">
+            
+            <div class="card">
+                <div class="card-banner">
+                    <div class="card-banner-logo">CSV</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <h2>CSV Exporter (Internal Use)</h2>
+                        <p>ดึงและแปลงข้อมูลระบบภายในทีมออกมาเป็นไฟล์ CSV ได้ง่ายๆ ในคลิกเดียว</p>
+                    </div>
+                    <a href="https://chromewebstore.google.com/detail/csv-exporter-internal-use/gkmfibmbbnfliaedoibogegbaegggfck?utm_source=item-share-cb" target="_blank" class="btn">
+                        Install Extension
+                        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-banner" style="background: linear-gradient(135deg, #ffa666 0%, #ff6600 100%);">
+                    <div class="card-banner-logo">PC</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <h2>Product Counter Floating</h2>
+                        <p>ปุ่มตัวนับสินค้าแบบลอยบนหน้าเว็บ ช่วยตรวจเช็คและนับจำนวนสินค้าได้อย่างรวดเร็ว</p>
+                    </div>
+                    <a href="https://chromewebstore.google.com/detail/product-counter-floating/dckadngdjhcinkmpgplmnglhdplobfno?utm_source=item-share-cb" target="_blank" class="btn">
+                        Install Extension
+                        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            </main>
+
+        <footer>
+            <p>© 2026 Wanheng Group Dev Team • Built with ❤️ for the team</p>
+        </footer>
+    </div>
+
+</body>
+</html>
