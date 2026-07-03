@@ -74,10 +74,38 @@
             margin: 0 auto;
         }
 
+        /* Section Title Style */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 40px 0 24px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-left: 20px;
+        }
+
+        .section-title span {
+            background-color: var(--orange-light);
+            color: var(--orange-primary);
+            padding: 4px 10px;
+            border-radius: 8px;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
         .extension-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
+            margin-bottom: 40px;
         }
 
         @media (min-width: 680px) {
@@ -96,10 +124,8 @@
             transition: var(--transition);
         }
 
-        /* ส่วนหัวของการ์ดที่เป็นพื้นที่ใส่รูป/กราฟิกตามเรฟ */
         .card-banner {
             height: 160px;
-            background: linear-gradient(135deg, #ff8033 0%, var(--orange-primary) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -107,13 +133,14 @@
             color: white;
         }
 
-        /* ตัวย่อชื่อโปรเจกต์กลางแบนเนอร์ */
         .card-banner-logo {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            opacity: 0.9;
-            letter-spacing: -1px;
+            opacity: 0.95;
+            letter-spacing: -0.5px;
             text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 0 20px;
         }
 
         .card-body {
@@ -180,7 +207,7 @@
         }
 
         footer {
-            margin-top: 80px;
+            margin-top: 60px;
             text-align: center;
             font-size: 0.9rem;
             color: var(--text-muted);
@@ -192,15 +219,18 @@
 
     <div class="container">
         <header>
-            <span class="badge">🔥 2 Extensions Available</span>
-            <h1>ST Team Extensions Hub</h1>
-            <p>ศูนย์รวมเครื่องมือ Chrome Extension เพื่อเพิ่มความสะดวกและรวดเร็วในการทำงานสำหรับทีมหลังบ้าน</p>
+            <span class="badge">🔥 5 Tools Available</span>
+            <h1>ST Team Tools Hub</h1>
+            <p>ศูนย์รวมเครื่องมือและระบบต่างๆ เพื่อเพิ่มความสะดวกและรวดเร็วในการทำงานสำหรับทีมหลังบ้าน</p>
         </header>
 
+        <!-- SECTION: CHROME EXTENSIONS -->
+        <h2 class="section-title"><span>🧩</span> Chrome Extensions</h2>
         <main class="extension-grid">
             
+            <!-- Extension 1 -->
             <div class="card">
-                <div class="card-banner">
+                <div class="card-banner" style="background: linear-gradient(135deg, #ff8033 0%, var(--orange-primary) 100%);">
                     <div class="card-banner-logo">CSV Exporter</div>
                 </div>
                 <div class="card-body">
@@ -215,9 +245,10 @@
                 </div>
             </div>
 
+            <!-- Extension 2 -->
             <div class="card">
                 <div class="card-banner" style="background: linear-gradient(135deg, #ffa666 0%, #ff6600 100%);">
-                    <div class="card-banner-logo">เครื่องนับจำนวน SKU</div>
+                    <div class="card-banner-logo">นับ SKU</div>
                 </div>
                 <div class="card-body">
                     <div class="card-info">
@@ -231,7 +262,63 @@
                 </div>
             </div>
 
-            </main>
+            <!-- Extension 3 (New) -->
+            <div class="card">
+                <div class="card-banner" style="background: linear-gradient(135deg, #ff954d 0%, #e65c00 100%);">
+                    <div class="card-banner-logo">Highlighter</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <h2>QTY Frinder and highlight</h2>
+                        <p>หาและไฮไลต์แถวตามรายการเลือก</p>
+                    </div>
+                    <a href="https://chromewebstore.google.com/detail/ljejlcjmihfjahdljnpifmopncamphge?utm_source=item-share-cb" target="_blank" class="btn">
+                        Install Extension
+                        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- SECTION: WEB APPLICATIONS -->
+        <h2 class="section-title"><span>🌐</span> Web Applications</h2>
+        <main class="extension-grid">
+            
+            <!-- WebApp 1 -->
+            <div class="card">
+                <div class="card-banner" style="background: linear-gradient(135deg, #ffb380 0%, #ff7315 100%);">
+                    <div class="card-banner-logo">WH Data</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <h2>Warehouse Data Analytics</h2>
+                        <p>ระบบจัดการและวิเคราะห์ข้อมูลคลังสินค้า จาก สั่งไม่สั่ง</p>
+                    </div>
+                    <a href="https://ssurachat4work-wq.github.io/st-wh-da/" target="_blank" class="btn">
+                        Open WebApp
+                        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- WebApp 2 -->
+            <div class="card">
+                <div class="card-banner" style="background: linear-gradient(135deg, #ff8c42 0%, #d95300 100%);">
+                    <div class="card-banner-logo">Job Dist.</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-info">
+                        <h2>ST Job Distributions</h2>
+                        <p>ระบบจัดการและกระจายงานสำหรับพนักงานคลังสินค้า (Job Distributions)</p>
+                    </div>
+                    <a href="https://nex-3n.github.io/ShuST.Job.Distributions/" target="_blank" class="btn">
+                        Open WebApp
+                        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </main>
 
         <footer>
             <p>© Shu Wanheng Group • Built with ❤️ for the team</p>
